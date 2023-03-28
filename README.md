@@ -1,3 +1,6 @@
+Group Project 5 Team 3
+
+
 Purpose: The objective of this project is to implement several distributed mutual
 exclusion algorithms and use each to solve a specified synchronization problem.
 
@@ -39,3 +42,9 @@ should be possible to have the processes located on different machines and still
 have the programs communicate correctly.
 
 8. Man page: create man pages that describe the usage of your programs.
+
+
+
+How to run:
+
+

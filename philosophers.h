@@ -9,9 +9,6 @@
 #include <sys/wait.h>
 #include <errno.h>
 #include <sys/types.h>
-#include <netinet/in.h>
-#include <netdb.h>
-#include <arpa/inet.h>
 #include <string.h>
 #include <sstream>
 

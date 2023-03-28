@@ -50,4 +50,4 @@ struct philosopher
 #define RETURNFORK "300"
 #define WHICHFORK "400"
 #define WHICHCHOPSTICKS "500"
-#define LEAVEWAITLIST "600"
+

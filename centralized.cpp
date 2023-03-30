@@ -1,3 +1,3 @@
 // Client side
 
-#include "phiosophers.h"
+#include "philosophers.h"

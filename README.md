@@ -1,6 +1,6 @@
 Group Project 5
 
-This program consist of two distributed program that implements two mutual exclusion algorithm. The centralized and token ring algorithms will be used to solve the Dining Philosophers Problem. 
+This internet type sockets program consist of two distributed program that implements two mutual exclusion algorithm. The centralized and token ring algorithms will be used to solve the Dining Philosophers Problem. 
 
 Defn: The Dining Philosophers problem is a classic computer science problem that illustrates the challenges of managing shared resources in a distributed system. It involves a group of philosophers sitting at a table with chopsticks, and trying to eat without causing a deadlock or starvation 
 

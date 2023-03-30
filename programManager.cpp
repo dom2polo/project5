@@ -1,4 +1,4 @@
 // Client side
 
 
-#include "header.h"
+#include "philosophers.h"

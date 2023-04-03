@@ -14,7 +14,7 @@
 
 #define SERVERPORT 80
 #define SERVERIP "199.17.28.80"
-#define SERVERNAME "team5"
+#define SERVERNAME "team3"
 #define BUFL 1000
 
 #define NUMPHIL 5

@@ -29,11 +29,6 @@ struct philosopher
     int chopsticks;
 };
 
-#define FORK1 "001"
-#define FORK2 "002"
-#define FORK3 "003"
-#define FORK4 "004"
-#define FORK5 "005"
 
 #define CHOPSTICKS1 "010"
 #define CHOPSTICKS2 "020"
@@ -42,9 +37,7 @@ struct philosopher
 #define CHOPSTICKS5 "050"
 
 #define CONNECTING "000"
-#define ASSIGNCHOPSTICKS "100"
-#define REQUESTFORK "200"
-#define RETURNFORK "300"
-#define WHICHFORK "400"
-#define WHICHCHOPSTICKS "500"
+#define REQUESTCHOPSTICKS "100"
+#define RETURNCHOPSTICKS "200"
+#define WHICHCHOPSTICKS "300"
 

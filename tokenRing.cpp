@@ -5,49 +5,33 @@
 char buffer[BUFL] = {0};
 int sock = 0, valread;
 
-int requestChopsticks()
-{
-    int sticks;
-    printf("Requesting Chopsticks.\n");
-    send(sock, ASSIGNCHOPSTICKS, strlen(ASSIGNCHOPSTICKS), 0);
 
-    valread = read(sock, buffer, BUFL);
-    ss << buffer;
-    ss >> valread;
-
-    sticks = atoi(buffer);
-    printf("Server says: %s\n", buffer);
-    printf("num value: %d\n", valread);
-    printf("sticks: %d\n", sticks);
-    return sticks;
-}
-
-int requestFork(int forkIndex)
+int requestChopsticks(int chopsticksIndex)
 {
     strcpy(buffer, "");
-    switch (forkIndex)
+    switch (chopsticksIndex)
     {
 
     case 0:
-        strcpy(buffer, FORK1);
+        strcpy(buffer, CHOPSTICKS1);
         break;
     case 1:
-        strcpy(buffer, FORK2);
+        strcpy(buffer, CHOPSTICKS2);
         break;
     case 2:
-        strcpy(buffer, FORK3);
+        strcpy(buffer, CHOPSTICKS3);
         break;
     case 3:
-        strcpy(buffer, FORK4);
+        strcpy(buffer, CHOPSTICKS4);
         break;
     case 4:
-        strcpy(buffer, FORK5);
+        strcpy(buffer, CHOPSTICKS5);
         break;
     }
 
-    send(sock, REQUESTFORK, strlen(REQUESTFORK), 0);
+    send(sock, REQUESTCHOPSTICKS, strlen(REQUESTCHOPSTICKS), 0);
 
-    printf("Requesting Fork: %d\n", forkIndex);
+    printf("Requesting Chopsticks: %d\n", chopsticksIndex);
     send(sock, buffer, strlen(buffer), 0);
     printf("sending: %s\n", buffer);
 
@@ -55,43 +39,43 @@ int requestFork(int forkIndex)
     valread = read(sock, buffer, BUFL);
     printf("Server says: %s\n", buffer);
 
-    if (strcmp(buffer, "OKK"))
+    if (strcmp(buffer, "OK"))
         return true;
-    else if (strcmp(buffer, "NOO"))
+    else if (strcmp(buffer, "NO"))
         return false;
 
     return 0;
 }
 
-int returnFork(int forkIndex)
+int returnChopsticks(int chopsticksIndex)
 {
-    switch (forkIndex)
+    switch (chopsticksIndex)
     {
 
     case 0:
-        strcpy(buffer, FORK1);
+        strcpy(buffer, CHOPSTICKS1);
         break;
     case 1:
-        strcpy(buffer, FORK2);
+        strcpy(buffer, CHOPSTICKS2);
         break;
     case 2:
-        strcpy(buffer, FORK3);
+        strcpy(buffer, CHOPSTICKS3);
         break;
     case 3:
-        strcpy(buffer, FORK4);
+        strcpy(buffer, CHOPSTICKS4);
         break;
     case 4:
-        strcpy(buffer, FORK5);
+        strcpy(buffer, CHOPSTICKS5);
         break;
     }
 
-    printf("Returning Fork: %d\n", forkIndex);
-    send(sock, RETURNFORK, strlen(RETURNFORK), 0);
+    printf("Returning Chopsticks: %d\n", chopsticksIndex);
+    send(sock, RETURNCHOPSTICKS, strlen(RETURNCHOPSTICKS), 0);
 
     send(sock, buffer, BUFL, 0);
 
     valread = read(sock, buffer, BUFL);
-    printf("Fork Returned: %s\n", buffer);
+    printf("Chopsticks Returned: %s\n", buffer);
 
     return 0;
 }
@@ -99,14 +83,14 @@ int returnFork(int forkIndex)
 void eat(struct philosopher phil)
 {
     phil.eatTime = rand() % TIMEMAX + 1;
-    printf("Phil with chopsticks %d is eating for %d\n", phil.chopsSticks, phil.eatTime);
+    printf("Phil with chopsticks %d is eating for %d\n", phil.eatTime);
     sleep(phil.eatTime);
 }
 
 void think(struct philosopher phil)
 {
     phil.thinkTime = rand() % TIMEMAX + 1;
-    printf("Phil with chopsticks %d is thinking for %d\n", phil.chopSticks, phil.thinkTime);
+    printf("Phil with chopsticks %d is thinking for %d\n", phil.thinkTime);
     sleep(phil.thinkTime);
 }
 

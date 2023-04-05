@@ -13,5 +13,5 @@ Token Ring Algorithm:
   - each philosopher communicates directly with their neighbors to acquire and release the shared resources.
 
 To compile and execute program: 
-  make
-  ./dining_philosopher
+  - make
+  - ./dining_philosopher

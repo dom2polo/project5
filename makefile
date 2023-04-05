@@ -1,11 +1,16 @@
-all: philosopherClient philosopherServer
+CC = gcc
+CFLAGS = -pthread
 
-philosopherClient: philosopherClient.c philosopher.h
-	$(CC)	-o philosopherClient philosopherClient.c
+all: dining_philosophers
 
-philosopherServer: philosopherServer.c philosopher.h
-	$(CC)	-o philosopherServer philosopherServer.c
+dining_philosophers: main.o centralized.o
+	$(CC) $(CFLAGS) -o dining_philosophers main.o centralized.o
+
+main.o: main.c header.h
+	$(CC) $(CFLAGS) -c main.c
+
+centralized.o: centralized.c header.h
+	$(CC) $(CFLAGS) -c centralized.c
 
 clean:
-	rm -f philosopherClient
-	rm -f philosopherServer
+	rm -f *.o dining_philosophers

@@ -26,6 +26,7 @@ struct philosopher
 {
     int eatTime;
     int thinkTime;
+    int chopSticks;
 };
 
 

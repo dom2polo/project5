@@ -11,3 +11,7 @@ Centralized Algorithm:
 Token Ring Algorithm: 
   - a token is passed around a logical ring topology, and only the node that holds the token is allowed to access a shared resource.
   - each philosopher communicates directly with their neighbors to acquire and release the shared resources.
+
+To compile and execute program: 
+  make
+  ./dining_philosopher

@@ -1,11 +1,11 @@
-all: philosopherClient philosopherServer
+all: tokenRing tokenServer
 
-philosopherClient: philosopherClient.c philosopher.h
-	$(CC)	-o philosopherClient philosopherClient.c
+tokenRing: tokenRing.c philosophers.h
+	$(CC)	-o tokenRing tokenRing.c -pthread -std=c99
 
-philosopherServer: philosopherServer.c philosopher.h
-	$(CC)	-o philosopherServer philosopherServer.c
+tokenServer: tokenServer.c philosophers.h
+	$(CC)	-o tokenServer tokenServer.c -pthread -std=c99
 
 clean:
-	rm -f philosopherClient
-	rm -f philosopherServer
+	rm -f tokenRing
+	rm -f tokenServer

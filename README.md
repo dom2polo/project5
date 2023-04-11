@@ -6,4 +6,4 @@ make
 
 Current working folder: ./project5
 
-change of IP address might be necessary.
+change of IP address might be necessary under Header.h.

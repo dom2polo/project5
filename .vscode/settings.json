@@ -1,0 +1,10 @@
+{
+    "files.associations": {
+        "philosopher.h": "c",
+        "stdio.h": "c",
+        "*.tcc": "c",
+        "fstream": "c",
+        "random": "c",
+        "limits": "c"
+    }
+}

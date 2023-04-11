@@ -45,7 +45,7 @@ have the programs communicate correctly.
 
 
 
-How to run token ring algorithm:
+How to run the token ring algorithm:
 1. Create two instances of the program and run the make file to create executable
 2. Run the server on one using root permissions if possible. sudo ./tokenServer
 3. Run the client on the other. ./tokenRing

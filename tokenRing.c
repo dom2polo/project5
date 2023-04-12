@@ -33,7 +33,7 @@ void *philosopher_behavior(void *arg) {
     Philosopher *philosopher = (Philosopher *)arg;
     char token_msg[8];
 
-    while (philosopher->eat_count < 1) {
+    while (philosopher->eat_count < (rand() % 8 + 3)) {
         think(philosopher);
 
         if (philosopher->has_token) {
